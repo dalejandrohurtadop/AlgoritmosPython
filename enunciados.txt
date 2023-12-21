@@ -1,0 +1,65 @@
+1. Escriba un programa en Python que imprima la siguiente secuencia.
+	1
+	1 2
+	1 2 3
+
+2. Escriba un programa en Python que imprima los números pares del 1 al 100.
+
+3. Escriba un programa en Python que imprima la siguiente secuencia
+	1
+	2 3
+	4 5 6
+
+4. Escriba un programa en python que lea un número entero y determine si es primo.
+
+5. Escriba un programa en Python que lea un número entero y determine si es perfecto.
+
+6. Escriba un programa en Python que lea un número entero y determine si es capicúa.
+
+7. Escriba un programa en Python que lea un número entero y determine si es divisible por 3.
+
+8. Escriba un programa en Python que lea un número entero y determine si es divisible por 5.
+
+9, Escriba un programa en Python que lea un número entero 'a' y un número 'n' y determine si 'a' es divisible por 'n'.
+
+10. Leer un número entero y mostrar si es par o impar.
+
+11. Escriba un programa en Python que imprima la siguiente secuencia:
+	1, 4, 9, 16, 25, ..., 100
+
+12. Escriba un programa en Python que imprima los números pares del 1 al 100.
+
+13. Escriba un programa en Python que imprima los números impares del 1 al 100.
+
+14. Escriba un programa en Python que imprima los números primos del 1 al 100.
+
+15. Escriba un programa en Python que imprima la siguiente secuencia:
+	*
+	**
+	***
+	****
+	*****
+
+16. Escriba un programa en Python que imprima la siguiente secuencia:
+	1
+	2 2
+	3 3 3
+	4 4 4 4
+
+17. Escriba una función en Python que calcule el factorial de un número.
+
+18. Escriba una función en Python que calcule la suma de los elementos de una lista.
+
+19. Escriba una función en Python que calcule el promedio de los elementos de una lista.
+
+20. Escriba un programa en Python que lea una lista de números enteros y determine si está ordenada de forma creciente.
+
+21. Escriba un programa en Python que lea una lista de números enteros y determine si hay números repetidos.
+
+22. Escriba un programa en Python que lea una lista de números enteros y determine si hay un número que aparezca más de la mitad de las veces.
+
+23. Escriba un programa en Python que lea una lista de números enteros y determine si hay un número que aparezca en dos posiciones consecutivas.
+
+24. Escriba un programa en Python que lea una lista de números enteros y determine si existe un camino desde el primer número hasta el último en el que se suman solo números primos.
+
+ 
