@@ -1,6 +1,6 @@
 import time
 
-# 1. Escriba un programa en Python que imprima la siguiente secuencia del eneunciado correspondiente
+# 1. Escriba un programa en Python que imprima la siguiente secuencia del enunciado correspondiente
 
 def secuencia_escalonada(n):
     for i in range(1,n+1):
@@ -14,7 +14,7 @@ def numero_pares(n):
     pares = [num for num in range(1,n+1) if num%2 == 0]
     return pares
 
-# 3. Escriba un programa en Python que imprima la siguiente secuencia del eneunciado correspondiente
+# 3. Escribe un programa en Python que imprima la siguiente secuencia del enunciado correspondiente
 
 def secuencia_ordenada_escalonada(n):
     max_fila = 0
@@ -38,33 +38,31 @@ def secuencia_ordenada_escalonada(n):
 #4. Escriba un programa en python que lea un número entero y determine si es primo.
                 
 def es_primo01(n):
-    n_medios = int(round(n/2,0) + 1)
+    n_medios = int(round(n/2,0) + 2)
 
-    if n%2 == 0:
+    if (n == 3) | (n ==2):
+        return print("El numero ", n, " es primo")
+    elif n%2 == 0 | n == 1:
         print("El numero ", n, " no es primo")
-    elif n ==3:
-        return True
     else:
-        for i in range(3, n_medios+1, 2):
+        for i in range(2, n_medios, 1):
             if(n%i == 0 ):
                 return print("El numero ", n, " no es primo"), print("Tiene como factor común el número  :", i) 
-        
         return print("El numero ", n, " es primo")
 
 def es_primo02(n):
-    n_medios = int(round(n/2,0) + 1)
+    n_medios = int(round(n/2,0) + 2)
 
     if (n == 3) | (n ==2):
         return True
     elif n%2 == 0 | n == 1:
         return False
     else:
-        for i in range(2, n_medios+1, 1):
+        for i in range(2, n_medios, 1):
             if(n%i == 0 ):
                 return False 
         return True
     
-
 #14. Escriba un programa en Python que imprima los números primos del 1 al 100.
     
 def lista_primos(n):
@@ -72,20 +70,20 @@ def lista_primos(n):
     return lista
 
 def es_primo03(n):
-    n_medios = int(round(n/2,0) + 1)
+    n_medios = int(round(n/2,0) + 2)
 
     if (n%2 == 0) | (n == 1):
         return False
     elif (n ==3) | (n==2):
         return True
     elif n_medios<=100000:
-        lista = lista_primos(n_medios+1)
+        lista = lista_primos(n_medios)
         for i in lista:
             if n%i == 0:
                 return False 
         return True
     else:
-        lista = lista_primos(100000+1) + list(range(100000,n_medios+1,2))
+        lista = lista_primos(100000+1) + list(range(100000,n_medios,2))
         for i in lista:
             if n%i == 0:
                 return False 
@@ -98,8 +96,7 @@ def es_primo04(n):
         return False
     elif (n ==3) | (n==2):
         return True
-    else:
-           
+    else:     
         lista=[num5 for num5 in [num3 for num3 in [num2 for  num2 in range(2, n_medios+1) if num2%2!=0] if num3%3!=0] if num5%5!=0]
         lista.insert(0,3)
         lista.insert(1,5)
