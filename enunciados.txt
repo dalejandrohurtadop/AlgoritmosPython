@@ -62,4 +62,4 @@
 
 24. Escriba un programa en Python que lea una lista de números enteros y determine si existe un camino desde el primer número hasta el último en el que se suman solo números primos.
 
- 
+
