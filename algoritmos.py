@@ -107,31 +107,55 @@ def es_primo04(n):
     
 #5. Escriba un programa en Python que lea un número entero y determine si es perfecto.
     
+def divisores_primos(n):
+
+    n_medios = int(round(n/2,0) + 2)
+
+    divisores = [i for i in lista_primos(n_medios) if n%i == 0]
+       
+    factores = []
+
+    for j in divisores:
+        a = [j,0]
+        num = n
+
+        while num%j == 0:
+            a[1] = a[1] + 1
+            num = num/j
+
+        factores.append(a)
+
+    return divisores, factores
+
+
 def divisores(n):
 
-    divisores=[1]
-    lista = lista_primos(n)
-
-    for i in lista:
-        if n%i ==0:
-            divisores.append(i)
-
+    n_medios = int(round(n/2,0) + 2)
+    divisores = [i for i in range(1,n_medios) if n%i == 0]
+       
     return divisores
- 
-def es_num_perfecto(n):
-    
-    sum_div = sum(divisores(n))
 
-    if sum_div == n:
-        return print(n, "Es número perfecto")
-    
-    return print(n, "No es número perfecto")
+
+def es_num_perfecto(n):
+
+    if sum(divisores(n)) == n:
+        result = str(n)+" Es número perfecto"
+    else:
+        result = str(n)+" No es número perfecto"
+
+    return result
+
 
 
    
 inicio = time.time()
 
-n=28
+n=496
+divisores_primo, factores = divisores_primos(n)
+
+
+print(divisores_primo)
+print(factores)
 print(divisores(n))
 print(es_num_perfecto(n))
 
