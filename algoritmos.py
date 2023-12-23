@@ -1,3 +1,10 @@
+#Archivo: algoritmos.py
+#Autor: Alejandro Hurtado
+#Fecha: Diciembre de 2023
+#Descripción: Contempla la solución de erjicios basicos de algoritmos
+#enumerados según el docuemtno de enunciados: enunciados.txt
+
+
 import time
 
 # 1. Escriba un programa en Python que imprima la siguiente secuencia del enunciado correspondiente
@@ -37,7 +44,7 @@ def secuencia_ordenada_escalonada(n):
         
 #4. Escriba un programa en python que lea un número entero y determine si es primo.
                 
-def es_primo01(n):
+def es_primo02(n):
     n_medios = int(round(n/2,0) + 2)
 
     if (n == 3) | (n ==2):
@@ -50,7 +57,7 @@ def es_primo01(n):
                 return print("El numero ", n, " no es primo"), print("Tiene como factor común el número  :", i) 
         return print("El numero ", n, " es primo")
 
-def es_primo02(n):
+def es_primo01(n):
     n_medios = int(round(n/2,0) + 2)
 
     if (n == 3) | (n ==2):
@@ -63,10 +70,114 @@ def es_primo02(n):
                 return False 
         return True
     
+#5. Escriba un programa en Python que lea un número entero y determine si es perfecto.
+    
+def divisores_primos(n):
+    
+    num = n
+    while num%2 == 0:
+        num = num/2
+
+    n_medios = int(round(num/2,0) + 2)
+
+    divisores = [i for i in lista_primos(n_medios) if n%i == 0]
+       
+    factores = []
+
+    for j in divisores:
+        a = [j,0]
+        num = n
+
+        while num%j == 0:
+            a[1] = a[1] + 1
+            num = num/j
+
+        factores.append(tuple(a))
+
+    return divisores, factores
+
+
+def divisores(n):
+
+    n_medios = int(round(n/2,0) + 2)
+    divisores = [i for i in range(1,n_medios) if n%i == 0]
+       
+    return divisores
+
+
+def es_num_perfecto(n):
+
+    if sum(divisores(n)) == n:
+        result = True # str(n)+" Es número perfecto"
+    else:
+        result = False #str(n)+" No es número perfecto"
+
+    return result
+
+#6. Escriba un programa en Python que lea un número entero y determine si es capicúa.
+
+def es_capicua(n):
+    num = str(n)
+    reverse_num = num[::-1]
+
+    if num == reverse_num:
+        return True
+    else:
+        return False
+    
+#Los siguientes enunciados se resulven con el siguiente programa
+#7. Escriba un programa en Python que lea un número entero y determine si es divisible por 3.
+#8. Escriba un programa en Python que lea un número entero y determine si es divisible por 5.
+#9, Escriba un programa en Python que lea un número entero 'a' y un número 'n' y determine si 'a' es divisible por 'n'.
+
+def es_divisible(a, n):
+    if a%n ==0:
+        return True
+    else:
+        return False
+
+#10. Leer un número entero y mostrar si es par o impar.
+def es_par(n):
+    if n%2 ==0:
+        return True
+    else:
+        return False
+        
+#11. Escriba un programa en Python que imprima la siguiente secuencia:
+#	1, 4, 9, 16, 25, ..., 100
+
+def lista_sec_imp(n):
+
+    lista = [1]
+    num = 1
+    sec = lista[0]
+
+    while sec <= n:
+        num = num + 2 
+        sec += num
+        if sec > 100:
+            break
+        else:
+            lista.append(sec)
+
+    return lista
+
+#12. Escriba un programa en Python que imprima los números pares del 1 al 100.
+
+def lista_pares(n):
+    lista = [i for i in range(1,n+1,1) if i%2 == 0]
+    return lista
+
+#13. Escriba un programa en Python que imprima los números impares del 1 al 100.
+
+def lista_impares(n):
+    lista = [i for i in range(1,n+1,2) if i%2 != 0]
+    return lista
+
 #14. Escriba un programa en Python que imprima los números primos del 1 al 100.
     
 def lista_primos(n):
-    lista = [num for num in range(1,n+1) if es_primo02(num)]
+    lista = [num for num in range(1,n+1) if es_primo01(num)]
     return lista
 
 def es_primo03(n):
@@ -104,60 +215,15 @@ def es_primo04(n):
             if(n%i == 0 ):
                 return False 
         return True
-    
-#5. Escriba un programa en Python que lea un número entero y determine si es perfecto.
-    
-def divisores_primos(n):
-
-    n_medios = int(round(n/2,0) + 2)
-
-    divisores = [i for i in lista_primos(n_medios) if n%i == 0]
-       
-    factores = []
-
-    for j in divisores:
-        a = [j,0]
-        num = n
-
-        while num%j == 0:
-            a[1] = a[1] + 1
-            num = num/j
-
-        factores.append(a)
-
-    return divisores, factores
-
-
-def divisores(n):
-
-    n_medios = int(round(n/2,0) + 2)
-    divisores = [i for i in range(1,n_medios) if n%i == 0]
-       
-    return divisores
-
-
-def es_num_perfecto(n):
-
-    if sum(divisores(n)) == n:
-        result = str(n)+" Es número perfecto"
-    else:
-        result = str(n)+" No es número perfecto"
-
-    return result
 
 
 
-   
+
 inicio = time.time()
 
-n=496
-divisores_primo, factores = divisores_primos(n)
+n = 100
 
-
-print(divisores_primo)
-print(factores)
-print(divisores(n))
-print(es_num_perfecto(n))
+print(lista_impares(n))
 
 
 time.sleep(1)
