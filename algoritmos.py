@@ -6,6 +6,7 @@
 
 
 import time
+import random
 
 # 1. Escriba un programa en Python que imprima la siguiente secuencia del enunciado correspondiente
 
@@ -216,14 +217,108 @@ def es_primo04(n):
                 return False 
         return True
 
+#15. Escriba un programa en Python que imprima la siguiente secuencia:
+#	*
+#	**
+#	***
+#	****
+#	*****
 
+def sec_asteriscos(n):
+
+    for i in range(1,n+1):
+        print("*"*i)
+
+#16. Escriba un programa en Python que imprima la siguiente secuencia:
+#	1
+#	2 2
+#	3 3 3
+#	4 4 4 4
+
+def sec_number_triangualr(n):
+
+    for i in range(1,n+1):
+        j=str(i)+" "
+        print(j*i)
+
+# 17. Escriba una función en Python que calcule el factorial de un número.
+
+def n_factorial(n):
+    if n==1:
+        return 1
+    else:
+        n = n * n_factorial(n-1)
+        return n
+
+#18. Escriba una función en Python que calcule la suma de los elementos de una lista.
+
+def sum_lista(lista):
+    n = int(len(lista))
+    i = 0
+    suma = lista[0]
+
+    if i == n-2:
+        suma = lista[i] + lista[i+1]
+    else:
+        suma = suma + sum_lista(lista[i+1:n])
+        
+    return suma
+
+## Generar de lista con numeros aleatorios
+
+def lista_randon(n,a,b):
+
+    return [random.randint(a, b) for i in range(n)]
+
+#19. Escriba una función en Python que calcule el promedio de los elementos de una lista.
+
+def promedio_lista(lista):
+    return sum(lista)/len(lista)
+
+
+#20. Escriba un programa en Python que lea una lista de números enteros y determine si está ordenada de forma creciente.
+
+def es_lista_ordenada(lista):
+    n=len(lista)
+    verificacion = [1 if lista[i]<=lista[i+1] else 0 for i,v in enumerate(lista[:n-1])]
+
+    suma = sum(verificacion)
+
+    if suma ==n-1:
+        return True
+    else:
+        return False
+    
+#21. Escriba un programa en Python que lea una lista de números enteros y determine si hay números repetidos.
+def num_repetido(lista):
+    n_list = len(lista)
+    conjunto = set(lista)
+    n_set = len(conjunto)
+
+    if n_list > n_set:
+        return True
+    else:
+        return False
 
 
 inicio = time.time()
 
-n = 100
+n = 3
+a = 2
+b = 50
+lista1 = lista_randon(n,a,b)
+lista2 =list(range(n))
+lista3 = [1,1,4,5,6,7]
 
-print(lista_impares(n))
+print(lista1)
+print(num_repetido(lista1))
+
+print(lista2)
+print(num_repetido(lista2))
+
+print(lista3)
+print(num_repetido(lista3))
+
 
 
 time.sleep(1)
