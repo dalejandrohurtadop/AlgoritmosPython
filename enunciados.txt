@@ -58,8 +58,8 @@
 
 22. Escriba un programa en Python que lea una lista de números enteros y determine si hay un número que aparezca más de la mitad de las veces.
 
-23. Escriba un programa en Python que lea una lista de números enteros y determine si hay un número que aparezca en dos posiciones consecutivas.
+23. Escriba un programa en Python que lea una lista de números enteros 
+y determine si hay un número que aparezca en dos posiciones consecutivas.
 
-24. Escriba un programa en Python que lea una lista de números enteros y determine si existe un camino desde el primer número hasta el último en el que se suman solo números primos.
 
 

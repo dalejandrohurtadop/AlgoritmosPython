@@ -300,6 +300,48 @@ def num_repetido(lista):
     else:
         return False
 
+#22. Escriba un programa en Python que lea una lista de números 
+#enteros y determine si hay un número que aparezca más de la mitad de las veces.
+
+def num_rep_lista(lista):
+
+    cantidad_elementos = len(lista)
+
+    new_lista = list(set(lista)) #Lista de elementos no repetido
+    
+    #lista de elemntos no repetidos y cantidad de veces que se repiten en la lista
+    num_elementos = [[j, lista.count(j)] for j in new_lista]
+
+    #numero mayor de repeticiones
+    maximo_rep = max([lista.count(j) for j in new_lista ])
+
+    #Lista de elementos que mas se repiten, con su numero de apariciones
+    valor_rep = [j for j in num_elementos if j[:][1] == maximo_rep]
+
+    if maximo_rep >=cantidad_elementos/2:
+        val_logico = True
+    else:
+        val_logico = False
+
+    return valor_rep, val_logico
+
+
+#23. Escriba un programa en Python que lea una lista de números enteros 
+#y determine si hay un número que aparezca en dos posiciones consecutivas.
+
+def consecutivos_val(lista):
+
+    for i, val in enumerate(lista[:-1]):
+        if lista[i] != lista[i+1]:
+            val_logico = False
+        else:
+            val_logico = True
+            break
+
+    
+    return val_logico
+
+
 
 inicio = time.time()
 
@@ -308,16 +350,12 @@ a = 2
 b = 50
 lista1 = lista_randon(n,a,b)
 lista2 =list(range(n))
-lista3 = [1,1,4,5,6,7]
-
-print(lista1)
-print(num_repetido(lista1))
-
-print(lista2)
-print(num_repetido(lista2))
+lista3 = [1,2,2,1,3,1,4,1,5,1,6,1]
 
 print(lista3)
-print(num_repetido(lista3))
+print(consecutivos_val(lista3))
+
+
 
 
 
