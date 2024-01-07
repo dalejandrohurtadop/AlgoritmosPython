@@ -1,3 +1,9 @@
+"""
+Realiza una tabla de asteriscos, cuando se ejecuta el programa
+ingresando como primer argumento el numero de filas y como
+segundo argumento el número de columnas
+"""
+
 import sys
 if len(sys.argv) ==3:
     filas = int(sys.argv[1])

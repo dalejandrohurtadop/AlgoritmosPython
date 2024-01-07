@@ -1,3 +1,7 @@
+"""
+Ingresando un numero entero positivo, lo descompone 
+en unidades, decenas, centenas, etc
+"""
 while True:
     numero = int(input("Ingrese un numero entero positivo: "))
     if numero<=0:
